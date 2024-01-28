@@ -21,10 +21,6 @@ const Pres = (props) => {
                         <Text style={styles.title}>{props.anneeDesc}</Text>
                         <Text style={styles.values}>{props.annee}</Text>
                     </View>
-                    <View style={styles.textval}>
-                        <Text style={styles.title}>{props.genreDesc}</Text>
-                        <Text style={styles.values}>{props.genre1} {props.genre2}</Text>
-                    </View>
                 </View>
             </View>
         </SafeAreaView >

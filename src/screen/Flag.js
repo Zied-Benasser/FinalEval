@@ -42,7 +42,7 @@ const Flag = () => {
                     <Text style={styles.Text}>Liste des Pays</Text>
                     <FlatList
                         data={data}
-                        renderItem={({ item }) => <Card img={item.flags['png']} titre={item.name} pop={item.population} />}
+                        renderItem={({ item }) => <Card img={item.flags['png']} titre={item.name} popDesc="Population :" pop={item.population} />}
                         keyExtractor={(item) => item.alpha3Code}
                     />
                 </View>

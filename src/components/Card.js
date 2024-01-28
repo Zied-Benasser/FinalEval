@@ -4,25 +4,15 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function Card(props) {
 
-  let img = props.img
-  let titre = props.titre
-  let desc = props.desc
-  let année = props.année
-  let genre = props.genre
-  let auteur = props.auteur
-  let population = props.pop
 
   return (<View style={styles.horizontal}>
-    <Image source={{ uri: img }} style={styles.image} />
+    <Image source={{ uri: props.img }} style={styles.image} />
     <View style={styles.presentation}>
-      <Text style={styles.titreFilm}>{titre}</Text>
-      <Text style={styles.description}>{desc}</Text>
+      <Text style={styles.titreFilm}>{props.titre}</Text>
       <View style={styles.genres}>
-        <View><Text>{année}  </Text></View>
-        <View><Text>{genre}</Text></View>
+        <View><Text>{props.popDesc}  </Text></View>
+        <View><Text>{props.pop}</Text></View>
       </View>
-      <Text>{population}</Text>
-      <Text style={styles.auteur}>{auteur}</Text>
     </View>
 
 

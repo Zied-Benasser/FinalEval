@@ -55,6 +55,7 @@ export default MovieScreen;
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 40,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
