@@ -24,5 +24,6 @@ function StackNavigator() {
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Bienvenue} options={{ headerShown: false }} />
         </Stack.Navigator>
+        
     );
 }
