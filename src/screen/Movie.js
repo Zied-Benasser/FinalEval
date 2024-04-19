@@ -22,8 +22,8 @@ const MovieScreen = () => {
                     console.warn(`Erreur HTTP ! Status: ${f.status}`);
                     return Alert.alert("Erreur HTTP");
                 } else {
-                    const jsone = await f.json();
-                    setData(jsone);
+                    const Json = await f.json();
+                    setData(Json);
                 }
             } catch (e) {
                 console.warn(e)

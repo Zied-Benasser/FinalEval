@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, FlatList } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, FlatList, Alert } from 'react-native';
 import Card from '../components/Card';
 
 
@@ -22,8 +22,8 @@ const Flag = () => {
                     console.warn(`Erreur HTTP ! Status: ${f.status}`);
                     return Alert.alert("Erreur HTTP");
                 } else {
-                    const jsone = await f.json();
-                    setData(jsone);
+                    const Json = await f.json();
+                    setData(Json);
                 }
             } catch (e) {
                 console.warn(e)
@@ -42,8 +42,8 @@ const Flag = () => {
                     <Text style={styles.Text}>Liste des Pays</Text>
                     <FlatList
                         data={data}
-                        renderItem={({ item }) => <Card img={"https://image.tmdb.org/t/p/w500" + item.flags['png']} titre={item.name} pop={item.population} />}
-                        keyExtractor={(item) => item.alpha3Code.toString()}
+                        renderItem={({ item }) => <Card img={item.flags['png']} titre={item.name} pop={item.population} />}
+                        keyExtractor={(item) => item.alpha3Code}
                     />
                 </View>
             )}

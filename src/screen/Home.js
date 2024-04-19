@@ -32,14 +32,17 @@ const Bienvenue = (props) => {
         return (
             <View style={styles.container}>
                 <Text style={styles.title} >Bienvenue sur mes Hobbies</Text>
-                <TextInput
-                    placeholder="Entrez votre nom"
-                    onChangeText={(text) => setTemp(text)}
-                />
-                <Button
-                    title="Valider"
-                    onPress={() => storeData('user', temp) && setUser(temp)}
-                />
+                <View style={styles.cont}>
+                    <Text style={styles.subT}>Création d'un utilisateur</Text>
+                    <TextInput style={styles.subT}
+                        placeholder="Entrez votre nom"
+                        onChangeText={(text) => setTemp(text)}
+                    />
+                    <Button
+                        style={styles.boutton}
+                        title="Valider"
+                        onPress={() => storeData('user', temp) && setUser(temp)}
+                    /></View>
 
             </View>
         );
@@ -51,7 +54,7 @@ const Bienvenue = (props) => {
 
         return (
             <><View style={styles.container}>
-                <Text style={styles.title}>Bienvenue {user}</Text> 
+                <Text style={styles.title}>Bienvenue {user}</Text>
                 <Text>Choisissez une image de profil</Text>
             </View><View style={{ display: 'flex', flexDirection: 'row' }} />
                 <PickAvatar />
@@ -70,8 +73,6 @@ const Bienvenue = (props) => {
         }
 
         return (
-
-
             <View style={styles.container}>
                 <Text style={styles.title} >Bienvenue {user}</Text>
 
@@ -110,10 +111,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 40
     },
+    cont:{
+        borderWidth: 1,
+        
+
+    },
     title: {
         fontSize: 25,
         fontWeight: "bold",
     },
+    subT: {
+        marginTop: 10,
+        fontSize: 20,
+    },
+    boutton: {
+        marginTop: 20
+    }
+
 });
 
 export default Bienvenue;
