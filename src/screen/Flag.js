@@ -42,8 +42,8 @@ const Flag = () => {
                     <Text style={styles.Text}>Liste des Pays</Text>
                     <FlatList
                         data={data}
-                        renderItem={({ item }) => <Card img={item.flags['png']} titre={item.name} pop={item.population} />}
-                        keyExtractor={(item) => item.alpha3Code}
+                        renderItem={({ item }) => <Card img={"https://image.tmdb.org/t/p/w500" + item.flags['png']} titre={item.name} pop={item.population} />}
+                        keyExtractor={(item) => item.alpha3Code.toString()}
                     />
                 </View>
             )}

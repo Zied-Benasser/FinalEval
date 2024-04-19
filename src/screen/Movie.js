@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import Card from '../components/Card';
-
+import Pres from '../components/Pres';
 
 const MovieScreen = () => {
     const [img, setImg] = useState('');
@@ -22,8 +22,8 @@ const MovieScreen = () => {
                     console.warn(`Erreur HTTP ! Status: ${f.status}`);
                     return Alert.alert("Erreur HTTP");
                 } else {
-                    const Json = await f.json();
-                    setData(Json);
+                    const jsone = await f.json();
+                    setData(jsone);
                 }
             } catch (e) {
                 console.warn(e)
@@ -42,7 +42,7 @@ const MovieScreen = () => {
                     <Text style={styles.Text}>Liste des films populaire</Text>
                     <FlatList
                         data={data.results}
-                        renderItem={({ item }) => <Card img={"https://image.tmdb.org/t/p/w500" + item.poster_path} titre={item.title} desc={item.overview} année={item.release_date} />}
+                        renderItem={({ item }) => <Pres img={"https://image.tmdb.org/t/p/w500" + item.poster_path} titreDesc="Titre :" titre={item.title} synopsisDesc="Description :" synopsis={item.overview} anneeDesc="Date de sortie :" annee={item.release_date} />}
                         keyExtractor={(item) => item.id.toString()} // Assuming item.id is a number
                     />
                 </View>
